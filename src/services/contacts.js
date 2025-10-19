@@ -15,9 +15,10 @@ export const getAllContacts = async ({ page, perPage, sortBy, sortOrder, filter 
         contactQuery.where("isFavourite").equals(filter.isFavourite);
     }
 
-    const contactCount = await ContactsCollection.find().merge(contactQuery).countDocuments();
-
-    const contacts = await contactQuery.skip(skip).limit(limit).sort({ [sortBy]: sortOrder }).exec();
+    const [contactCount, contacts] = await Promise.all([
+        ContactsCollection.find().merge(contactQuery).countDocuments(),
+        contactQuery.skip(skip).limit(limit).sort({ [sortBy]: sortOrder }).exec()
+    ]);
 
     const paginationData = calculatePaginationData(contactCount, perPage, page);
 
