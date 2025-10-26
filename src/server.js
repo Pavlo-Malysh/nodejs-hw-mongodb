@@ -2,14 +2,13 @@
 import express from "express";
 import cors from "cors";
 import pino from "pino-http";
-import getEnvVar from "./utils/getEnvVar.js";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import { notFoundHandler } from "./middlewares/notFoundHandler.js";
 import routers from "./routers/index.js";
 import cookieParser from "cookie-parser";
+import { PORT, UPLOAD_DIR } from "./constants/index.js";
 
 
-const PORT = Number(getEnvVar("PORT", "3000"));
 
 export default function setupServer() {
 
@@ -26,6 +25,9 @@ export default function setupServer() {
             }
         })
     );
+
+    app.use('/uploads', express.static(UPLOAD_DIR));
+
 
     app.use(routers);
     app.use(notFoundHandler);

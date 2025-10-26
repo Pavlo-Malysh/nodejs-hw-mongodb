@@ -42,7 +42,9 @@ export const createContact = async (payload) => {
 };
 
 export const patchContact = async (contactId, userId, payload) => {
-    const contact = await ContactsCollection.findOneAndUpdate({ _id: contactId, userId }, { $set: payload }, { new: true });
+    const contact = await ContactsCollection.findOneAndUpdate({ _id: contactId, userId, }, { $set: payload }, { new: true });
+    console.log(contact);
+
     return contact;
 };
 
