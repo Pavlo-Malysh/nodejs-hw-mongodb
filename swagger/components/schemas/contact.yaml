@@ -1,0 +1,55 @@
+type: object
+required:
+  - _id
+  - name
+  - phoneNumber
+  - email
+  - contactType
+  - userId
+  - createdAt
+  - updatedAt
+properties:
+  _id:
+    type: string
+    description: Contact id
+    example: 68efd41636a23320bb4ef586
+  name: 
+    type: string
+    description: Contact name
+    example: Anna Dark
+  phoneNumber:
+    type: string
+    description: Phone contact
+    example: '+3802340054456'
+  email:
+    type: string
+    description: Contact email
+    example: anna@gmail.com
+  isFavourite:
+    type: boolean
+    description: Contact is favourite
+    default: false
+    example: true
+  contactType:
+    type: string
+    description: Contact type
+    enum: ['work', 'home', 'personal']
+    default: "personal"
+    example: work
+  photo:
+    type: string
+    description: Contact photo
+    default: null
+    example: https://res.cloudinary.com/deueyahda/image/upload/v1761483439/ynnms8v967tyyeg7zwyv.png
+  userId:
+    type: string
+    description: User id
+    example: 68fdba858d0c62104d6586cd
+  createdAt:
+    type: string
+    format: date-time
+    example: 2025-12-08T18:21:10.157+00:00
+  updatedAt:
+    type: string
+    format: date-time
+    example: 2025-12-08T18:21:10.157+00:00
