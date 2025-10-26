@@ -124,8 +124,9 @@ export const resetPassword = async (token, password) => {
         if (!user) throw new createHttpError.Unauthorized("User not found");
 
         const hashedNewPassword = await bcrypt.hash(password, 10);
-        await UsersCollection.updateOne({ _id: decoded.sub }, { password: hashedNewPassword });
         await SessionCollection.deleteOne({ _id: decoded.sub });
+        await UsersCollection.updateOne({ _id: decoded.sub }, { password: hashedNewPassword });
+
 
     } catch (error) {
         if (error.name === 'TokenExpiredError') {
