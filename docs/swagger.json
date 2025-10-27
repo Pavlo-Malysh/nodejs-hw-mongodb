@@ -11,7 +11,7 @@
   },
   "servers": [
     {
-      "url": "http://127.0.0.1:8090"
+      "url": "https://contact-app-l1ya.onrender.com"
     }
   ],
   "tags": [
@@ -27,7 +27,7 @@
           "Contacts"
         ],
         "summary": "Get all contacts",
-        "operationId": "getAllContact",
+        "operationId": "getAllContacts",
         "description": "Get list of all contacts with pagination, sorting and filtering",
         "security": [
           {
@@ -196,7 +196,7 @@
       },
       "post": {
         "tags": [
-          "Contact"
+          "Contacts"
         ],
         "summary": "Create contact",
         "operationId": "postContact",
@@ -306,7 +306,7 @@
     "/contacts/{id}": {
       "get": {
         "tags": [
-          "Contact"
+          "Contacts"
         ],
         "summary": "Get contact by id",
         "operationId": "getContact",
@@ -391,7 +391,7 @@
       },
       "patch": {
         "tags": [
-          "Contact"
+          "Contacts"
         ],
         "summary": "Patch contact",
         "operationId": "patchContact",
@@ -528,7 +528,7 @@
       },
       "delete": {
         "tags": [
-          "Contact"
+          "Contacts"
         ],
         "summary": "delete contact by id",
         "operationId": "DeleteContact",

@@ -8,7 +8,7 @@ info:
   description: This is a documentation of Contacts API
 
 servers:
-  - url: http://127.0.0.1:8090
+  - url: https://contact-app-l1ya.onrender.com
 
 paths:
   /contacts:

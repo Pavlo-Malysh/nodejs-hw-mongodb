@@ -1,7 +1,7 @@
 tags:
   -  Contacts
 summary: Get all contacts
-operationId: getAllContact
+operationId: getAllContacts
 description: Get list of all contacts with pagination, sorting and filtering
 security:
 - bearerAuth: []
